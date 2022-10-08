@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">JeuDevinette</string>
+    <string name="np">Nouvelle partie</string>
+    <string name="dev">Dévinez le nombre caché:</string>
+    <string name="valider">Valider</string>
+    <string name="history">Historique:</string>
+</resources>
