@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     private fun refresh(){
         val intent = intent
         finish()
