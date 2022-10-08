@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         var guessBtn: Button =findViewById(R.id.btn_valider)
 
         npBtn.setOnClickListener{
-            clear()
+            refresh()
         }
 
         guessBtn.setOnClickListener{
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun clear(){
+    private fun refresh(){
         val intent = intent
         finish()
         startActivity(intent)
