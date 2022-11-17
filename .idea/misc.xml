@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/activity_main.xml" value="0.29375" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/drawable/game_background.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/activity_result.xml" value="0.25" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/activity_welcoming.xml" value="0.25" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/activity_welcoming2.xml" value="0.2" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/card_view_design.xml" value="0.33" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/styles.xml" value="0.2" />
+        <entry key="..\:/Users/ameld/AndroidStudioProjects/JeuDevinette/app/src/main/res/layout/welcoming.xml" value="0.25" />
       </map>
     </option>
   </component>
