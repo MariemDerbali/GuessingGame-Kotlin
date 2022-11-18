@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refresh(){
+        if (countdown_timer!= null){
+            countdown_timer!!.cancel()
+        }
         val intent = intent
         finish()
         startActivity(intent)
@@ -76,7 +79,6 @@ class MainActivity : AppCompatActivity() {
         var result: TextView = findViewById(R.id.res)
         var history: TextView=findViewById(R.id.history)
         var nbr:EditText=findViewById(R.id.nbr)
-       // var scoreTV:TextView=findViewById(R.id.score)
 
         var countdownText: TextView =findViewById(R.id.counter)
 
@@ -86,19 +88,18 @@ class MainActivity : AppCompatActivity() {
         if(nbr.text.toString().length==0){
             Toast.makeText(this.applicationContext,"Empty field!",Toast.LENGTH_SHORT).show()
         }else{
-            if(randomNumber.toString()==nbr.text.toString()){
+            if(randomNumber==Integer.parseInt(nbr.text.toString()) ){
 
                 if (countdown_timer!= null){
                     countdown_timer!!.cancel()
                 }
                 //score=100-(nbre d'essai + nbre de secondes passées)
                 val FinalScore=BestScore-(m+ (60-Integer.parseInt(countdownText.text.toString())))
-                Toast.makeText(applicationContext,"Score:${(FinalScore).toString()}",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Score:${(FinalScore).toString()}",Toast.LENGTH_LONG).show()
 
 
                 val status = sqliteHelper.updateLastScore(FinalScore)
                 if(status>-1){
-                    Toast.makeText(this,"   score is updated..." , Toast.LENGTH_SHORT).show()
 
                     intent = Intent(this, ResultActivity::class.java)
                     startActivity(intent)
@@ -113,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            }else if(randomNumber.toString()>nbr.text.toString()){
+            }else if(randomNumber>Integer.parseInt(nbr.text.toString())){
                 result.text="Your number is too small!!"
                 history.setText(his);
                 m++

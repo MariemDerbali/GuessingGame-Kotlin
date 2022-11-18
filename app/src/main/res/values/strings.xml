@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Guessing Game by Mariem Derbali</string>
     <string name="np">New part</string>
-    <string name="dev">Guess the hidden number:</string>
+    <string name="dev">Guess between 0 and 10</string>
     <string name="valider">Validate</string>
     <string name="history">History:</string>
 </resources>
