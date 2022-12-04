@@ -98,8 +98,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="318dp"
+        android:layout_height="27dp"
         android:layout_margin="10dp"
 
         android:fontFamily="@font/bree_serif"
@@ -108,26 +108,26 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
         android:layout_width="141dp"
         android:layout_height="52dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginBottom="144dp"
         android:background="@drawable/crd_user_bg1"
         android:fontFamily="@font/concert_one"
         android:text="Let's Play"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvnom"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.962" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
