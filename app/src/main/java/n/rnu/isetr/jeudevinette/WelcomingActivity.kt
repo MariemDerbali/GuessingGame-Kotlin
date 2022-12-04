@@ -22,6 +22,10 @@ class WelcomingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcoming)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         initView()
         sqliteHelper=SQLiteHelper(this)
 

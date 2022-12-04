@@ -13,7 +13,12 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
+
+        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
 
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
@@ -23,7 +28,7 @@ class ResultActivity : AppCompatActivity() {
 
         sqliteHelper=SQLiteHelper(this)
 
-        data=sqliteHelper.getTop5Joueurs()
+        data=sqliteHelper.getTop10Joueurs()
 
         // This will pass the ArrayList to our Adapter
         val adapter = CustomAdapter(data)

@@ -43,10 +43,10 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME,nu
         return success
     }
 
-    fun getTop5Joueurs():ArrayList<Joueur>{
+    fun getTop10Joueurs():ArrayList<Joueur>{
 
         val joueurList: ArrayList<Joueur> = ArrayList()
-        val selectQuery="SELECT * FROM $TBL_JOUEUR ORDER BY $SCORE DESC limit 5 "
+        val selectQuery="SELECT * FROM $TBL_JOUEUR ORDER BY $SCORE DESC limit 10 "
         val db=this.readableDatabase
 
         val cursor: Cursor?

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ResultActivity"
-    android:background="@drawable/game_background">
+    android:background="@drawable/crd_bg">
 
     <TextView
         android:id="@+id/textView"
@@ -14,8 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="Top 5 best players"
+        android:text="Top 10 best players"
         android:textColor="@color/white"
+        android:fontFamily="@font/concert_one"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="25sp"
         android:textStyle="bold"

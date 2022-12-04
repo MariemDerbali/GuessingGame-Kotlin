@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         sqliteHelper=SQLiteHelper(this)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
 
         var npBtn: Button= findViewById(R.id.btn_np)
 
@@ -95,15 +99,17 @@ class MainActivity : AppCompatActivity() {
                 }
                 //score=100-(nbre d'essai + nbre de secondes passées)
                 val FinalScore=BestScore-(m+ (60-Integer.parseInt(countdownText.text.toString())))
-                Toast.makeText(applicationContext,"Score:${(FinalScore).toString()}",Toast.LENGTH_LONG).show()
-
 
                 val status = sqliteHelper.updateLastScore(FinalScore)
                 if(status>-1){
 
-                    intent = Intent(this, ResultActivity::class.java)
+                    val str: String = "Your score is "+FinalScore
+                    intent = Intent(this, ScoreActivity::class.java)
+                    intent.putExtra("message_key", str);
+
                     startActivity(intent)
                     finish()
+
                 }else{
                     Toast.makeText(this,"   score has not been updated" , Toast.LENGTH_SHORT).show()
 
@@ -114,7 +120,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            }else if(randomNumber>Integer.parseInt(nbr.text.toString())){
+            }
+
+            else if (Integer.parseInt(nbr.text.toString()) !in (0..10 ))
+             {
+                result.text="Your number is out of range!!"
+                m++
+
+            }
+
+            else if(randomNumber>Integer.parseInt(nbr.text.toString())){
                 result.text="Your number is too small!!"
                 history.setText(his);
                 m++
