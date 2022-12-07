@@ -113,11 +113,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.542" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="318dp"
+        android:layout_height="27dp"
+        android:layout_margin="10dp"
+
+        android:fontFamily="@font/bree_serif"
+        android:text="Choose your level"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
         android:layout_width="141dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="144dp"
         android:background="@drawable/crd_user_bg1"
         android:fontFamily="@font/concert_one"
         android:text="Let's Play"
@@ -125,9 +141,36 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvnom"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="307dp"
+        android:layout_height="98dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786">
 
+        <RadioButton
+            android:id="@+id/radioBtn1"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+
+            android:checked="true"
+            android:text="Beginner" />
+
+        <RadioButton
+            android:id="@+id/radioBtn2"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+
+            android:text="Advanced" />
+
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@ class CustomAdapter(private val mList: List<Joueur>) : RecyclerView.Adapter<Cust
 
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = "Player: "+ItemsViewModel.nom +"\n Score: "+ItemsViewModel.score
+        holder.textView.text = "Player: "+ItemsViewModel.nom +"\nScore: "+ItemsViewModel.score+"\nLevel: "+ItemsViewModel.niveau
     }
 
     // return the number of the items in the list

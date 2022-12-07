@@ -16,12 +16,13 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME,nu
             private const val ID="id"
             private const val NOM="nom"
             private const val SCORE="score"
+            private const val NIVEAU="niveau"
 
         }
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTbljoueur=("CREATE TABLE "+ TBL_JOUEUR+"("
-                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ NOM+ " TEXT,"+ SCORE+ " TEXT"+")")
+                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+ NOM+ " TEXT,"+ NIVEAU+ " TEXT,"+ SCORE+ " TEXT"+")")
         db?.execSQL(createTbljoueur)
     }
 
@@ -36,6 +37,8 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME,nu
         val contentValues=ContentValues()
          contentValues.put(NOM,joueur.nom)
         contentValues.put(SCORE,joueur.score)
+        contentValues.put(NIVEAU,joueur.niveau)
+
 
 
         val success=db.insert(TBL_JOUEUR,null , contentValues)
@@ -60,15 +63,17 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME,nu
         }
 
          var nom:String
+        var niveau:String
         var score:Int
 
         if(cursor.moveToFirst()){
             do{
                  nom=cursor.getString(cursor.getColumnIndexOrThrow("nom"))
                 score=cursor.getInt(cursor.getColumnIndexOrThrow("score"))
+                niveau=cursor.getString(cursor.getColumnIndexOrThrow("niveau"))
 
 
-                val joueur=Joueur(nom = nom, score = score)
+                val joueur=Joueur(nom = nom, score = score,niveau=niveau)
                 joueurList.add(joueur)
             }while(cursor.moveToNext())
         }
@@ -88,5 +93,31 @@ class SQLiteHelper(context: Context) :SQLiteOpenHelper(context, DATABASE_NAME,nu
         db.close()
 
      }
+
+    fun getLastLevel():String{
+        val selectQuery="SELECT $NIVEAU FROM $TBL_JOUEUR ORDER BY $ID DESC limit 1"
+        val db=this.readableDatabase
+
+        val cursor: Cursor?
+
+        try{
+            cursor=db.rawQuery(selectQuery,null)
+        }catch(e:Exception){
+            e.printStackTrace()
+            db.execSQL(selectQuery)
+            return toString()
+        }
+
+        var niveau:String=""
+
+        if(cursor.moveToFirst()){
+            do{
+
+                niveau=cursor.getString(cursor.getColumnIndexOrThrow("niveau"))
+
+            }while(cursor.moveToNext())
+        }
+        return niveau
+    }
 
 }

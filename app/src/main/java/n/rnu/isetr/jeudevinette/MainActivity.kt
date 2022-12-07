@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.View
 import java.util.*
 import android.widget.*
 
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     private var countdown_timer: CountDownTimer? = null
     private var time_in_milliseconds = 60000L
     private var pauseOffSet = 0L
+    lateinit var tv :TextView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
         var npBtn: Button= findViewById(R.id.btn_np)
+        tv =findViewById(R.id.tv2)
 
         var guessBtn: Button =findViewById(R.id.btn_valider)
 
@@ -116,7 +120,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 result.setText("")
-                history.text=his+"\n"+"You guessed correctly in $m tries!!"
+                if (sqliteHelper.getLastLevel().equals("Beginner")){
+                history.text=his+"\n"+"You guessed correctly in $m tries!!"}
 
 
 
@@ -130,13 +135,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             else if(randomNumber>Integer.parseInt(nbr.text.toString())){
-                result.text="Your number is too small!!"
-                history.setText(his);
+                //if last level is beginner then show history
+                    if (sqliteHelper.getLastLevel().equals("Beginner")){
+                        tv.setVisibility(View.VISIBLE);
+                        result.text="Your number is too small!!"
+                        history.setText(his);
+                    }
                 m++
 
             }else{
-                result.text="Your number is too big!!"
-                history.setText(his);
+                if (sqliteHelper.getLastLevel().equals("Beginner")){
+                    tv.setVisibility(View.VISIBLE);
+                    result.text="Your number is too big!!"
+                    history.setText(his);
+                }
                 m++
 
             }
