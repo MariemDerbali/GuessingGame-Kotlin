@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ScoreActivity"
+    >
+
+<item
+        android:id="@+id/best_players"
+         android:title="Best scores"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/quit"
+        android:title="Quit game"
+        app:showAsAction="never" />
+</menu>
